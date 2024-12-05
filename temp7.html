@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #h{
+            font-size: 58px;
+            color: blue;
+        }
+        .container{
+            display: flex;
+            padding: 100px;
+
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+        }
+        .login{
+            background-color: white;
+            margin: 30px;
+            padding: 100px;
+            /* width: 100%; */
+            border-radius: 10px;
+            text-align: center;
+
+        }
+        .btn-login{
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            size: 50px;
+
+        }
+        .btn-ca{
+            background-color: green;
+            color: #eee;
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+        }
+        .inbox{
+            width: 250px;
+            height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div>
+        <h1 id="h">facebook</h1>
+        <h3>Facebook helps you connect and share with the people in your life.</h3>
+    </div>
+    <div class="login">
+    <form>
+        <input type="text" size="50px" placeholder="Email address or phone number" class="inbox"><br><br>
+        <input type="password" placeholder="password" size="50px" class="inbox"><br><br>
+        <button class="btn-login inbox" >Log in</button><br><br>
+        <button><a href="#">Forgotten password</a></button><br><br>
+        <button class="btn-ca ">Create new Account</button><br><br>
+    </form>
+    </div>
+</div>
+</body>
+</html>
