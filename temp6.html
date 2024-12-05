@@ -67,13 +67,6 @@
             right: 0px;
             bottom: 0px;
             height: 100%;
-
-        }
-        
-        .icons{
-            color:black ;
-            padding: 10px;
-            /* text-decoration: none; */
         }
         .header{
             background-image: url("https://picjumbo.com/wp-content/uploads/business-woman-working-on-laptop-in-her-office-free-photo-2210x1473.jpg");
@@ -105,6 +98,23 @@
         .menu:hover .submenu{
             display: block;
         }
+        .service-box{
+            background-color: rgb(68, 67, 67);
+            width: 200px;
+            height: 100%;
+            position: absolute;
+            right: 0px;
+            top: 90px;
+            left: 0px;
+            display: none;
+            transition-property: right;
+            transition-duration: 0.3s;
+        }
+        .h:hover .service-box{
+            background-color: blue;
+            display: block;
+            left: 200px;
+        }
     </style>
 </head>
 <body>
@@ -117,17 +127,26 @@
         <h4 >My Application</h4>
         <div id="h1">
             <ul>
-            <li><a href="#home" class="icons">Home </a></li>
+            <li><a href="#home">Home </a></li>
             <li class="menu">
-            <a href="#projects" class="icons">Projects </a>
+            <a href="#projects" >Projects </a>
             <div  class="submenu">
                 <a href="#">Project 1</a><br>
                 <a href="#">Project 2</a>
             </div>
             </li>
-            <li><a href="#" class="icons">About </a></li>
-            <li><a href="#" class="icons">Service </a></li>
-            <li><a href="#" class="icons">Contact </a></li>
+            
+            <li class="menu">
+                <li><a href="#">Service </a></li>
+
+                <div class="service-box">
+                    <a href="#" >Web Development</a><br>
+                    <a href="#" >Mobile App Development</a><br>
+                    <a href="#" >Backend Development</a>
+                </div>
+            </li>
+            <li><a href="#" >About </a></li>
+            <li><a href="#" >Contact </a></li>
             </ul>
         </div>
     </div>
