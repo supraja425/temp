@@ -5,47 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin: 0px;
+        }
         .c{
             background-color: pink;
         }
-        h3{
+        #h{
             background-color: orange;
+            display: flex;
+            padding: 10px;
+            position: sticky;
+            justify-content: space-between;
         }
         #h1{
-            background-color: beige;
+            background-color: orange;
+            display: flex;
+            margin-top: 5px;
         }
+        h3{
+            background-color: orange;
+            padding: 20px;
+            position: sticky;
+        }
+        
         .row{
             background-color: rgb(130, 201, 201);
             padding: 10px;
             display: flex;
             justify-content: space-around;
             /* justify-content: center; */
+            align-items: center;
+            /* align-items: start;
+            align-items: end; */
             height: 100%;
         }
         .box{
             background-color: aqua;
             margin: 10px;
-            padding: 20px;
+            padding: 50px;
+            width: 200px;
+            border: 5px solid orange;
+            border-radius: 20px;
+            background: linear-gradient(pink,rgb(218, 119, 119));
+            /* background: radial-gradient(rgb(204, 222, 150),yellow); */
+            box-shadow: 5px 5px 5px 5px silver;
+            transition-property:height, transform;
+            transition-duration: 0.2s;
         }
-        body{
+        .box:hover{
+            transform: scale(1.5, 1.5);
+            /* width: 400px; */
+            height: 200px;
+        }
+        .container{
             position: absolute;
+            scroll-behavior: smooth;
             overflow: auto;
             top:0px;
             left: 0px;
             right: 0px;
             bottom: 0px;
             height: 100%;
+
+        }
+        
+        .icons{
+            color:black ;
+            padding: 10px;
+            /* text-decoration: none; */
+        }
+        .header{
+            background-image: url("https://picjumbo.com/wp-content/uploads/business-woman-working-on-laptop-in-her-office-free-photo-2210x1473.jpg");
+            background-size: cover;
+            justify-content: space-between;
+            /* justify-content: space-between /start/left */
+            align-items: start;
+        }
+        .caption{
+            background-color: rgb(226, 58, 58);
+            padding: 40px;
+            opacity: 0.5;
+            
+        }
+        ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            display: inline-block;
+            padding: 5px;
+            font-size: larger;
+        }
+        .submenu{
+            display: none;
+            position: absolute;
+            background-color: silver;
+        }
+        .menu:hover .submenu{
+            display: block;
         }
     </style>
 </head>
 <body>
-    <h1>Temp 6</h1>
+    <!-- <h1>Temp 6</h1>
     <h3 style="background-color: orange;">My Application</h3> 
     <h3 class="c">My Application</h3>
-    <h3 >My Application</h3>
-    <h3 id="h1">My Application</h3>
-    <hr>
-    <div class="row">
+    <h3 >My Application</h3> -->
+    <div class="container">
+    <div id="h">
+        <h4 >My Application</h4>
+        <div id="h1">
+            <ul>
+            <li><a href="#home" class="icons">Home </a></li>
+            <li class="menu">
+            <a href="#projects" class="icons">Projects </a>
+            <div  class="submenu">
+                <a href="#">Project 1</a><br>
+                <a href="#">Project 2</a>
+            </div>
+            </li>
+            <li><a href="#" class="icons">About </a></li>
+            <li><a href="#" class="icons">Service </a></li>
+            <li><a href="#" class="icons">Contact </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row header" id="home">
+        <div class="caption">
+            <h1 style="color:black">Full Stack Developer</h1>
+            <p>MERN | JAVA | PYTHON </p>
+        </div>
+    </div>        
+    <div class="row" id="projects">
         <div class="box">
             <h2>Project 1</h2>
             <p>This is my Project</p>
@@ -62,8 +154,12 @@
             <a href="#">View Project</a>
         </div>
     </div>
+    <div >
+
+    </div>
     <div>
         <h3>@Copyright 2024 All Rights are Reserved</h3>
     </div>
+</div>
 </body>
 </html>
