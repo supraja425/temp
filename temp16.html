@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let v1=document.getElementById("n1").value
-        let v2=document.getElementById("n2").value
-        function submit(){
-            
+        function showLogin(){
+        root.innerHTML="hello world!!"
         }
     </script>
 </head>
-<body>
-    <input type="number" id="n1">
-    <input type="number" id="n2">
-    <button onclick="submit()">submit</button>
+<body onload="showLogin()">
+    <div id="root"></div>
 </body>
 </html>
