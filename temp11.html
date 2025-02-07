@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*let a=20;
+        let b=20;
+        if(a>b){
+            console.log(`${a} is greater`)
+        }
+        else if(b>a){
+            console.log(`${b} is greater`)
+        }
+        else{
+            console.log("Both a and b are equal")
+        }*/
+        /*let i=1;
+        while(i<=5){
+            console.log(i)
+            i=i+1;
+        }*/
+       /* for(let i=0;i<5;i++)
+        {
+            console.log(i)
+        }*/
+        /*let arr=["a","b","c","d"]
+        for(let i=0;i<4;i++)
+        {
+            console.log(arr[i])
+        }*/
+        /*let arr2=["a1","a2","a3","a4"]
+        arr2.map((value)=>{
+            console.log(value)
+        })
+        let names=["john","ambrose","lara jane"]
+        names.push("peter")
+        console.log(names)*/
+        let names=[]
+        function add(){
+            let name=document.getElementById("name").value
+            names.push(name);
+            let str=""
+            names.map((value)=>{
+                str=str + value + "<br>"
+            })
+            data.innerHTML=str
+        }
+    </script>
+</head>
+<body>
+    <h1>Data Entry Form</h1>
+    <input type="text" id="name" placeholder="Enter Name">
+    <button onclick="add()">Add</button>
+    <div id="data"></div>
+</body>
+</html>
