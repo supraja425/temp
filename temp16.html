@@ -5,12 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        let users=[];
+        let useremail=""
+        let username=""
+        let currBalance=0
+        function home(){
+            str=`
+                <h2>Welcome!!! ${username}</h2>
+                <p><button onclick="showLogin()">LogOut</button></p>
+                <p><input type="number" placeholder="Enter Amount"></p>
+                <p><select id="type">
+                    <option value=0>--Select--</option>
+                    <option value=1>--Deposit--</option>
+                    <option value=2>--Withdraw--</option>
+                </select></p>
+                <button>Submit</button>
+                <p>current Balance ${currBalance}</p>
+            `;
+            root.innerHTML=str;
+        }
         function showLogin(){
-        root.innerHTML="hello world!!"
+            let str=`
+            <div>
+                <h2>Login Form</h2>
+                <div id='msg'></div>
+                <p><input type="text" id="email" placeholder="username or email" ></P>
+                <p><input type="password" id="password" placeholder="password"></P>
+                <button onclick="showWel()">LogIn</button><br><br>
+                <button onclick="showForm()">create Account</button>
+            </div>
+            `
+        root.innerHTML=str;
+        }
+        function showForm(){
+            let str=`
+            <div>
+                <h2>Registration Form</h2>
+                <p><input type="text" id="name" placeholder="enter username" required></P>
+                <p><input type="email" id="email" placeHolder="Enter email address" required></p>
+                <p><input type="password" id="password" placeholder="create password" required></P>
+                <p><input type="date" id="dob" placeholder="enter dob" required></p>
+                <button onclick="addUser()">submit</button>
+                <p>Already a member?<button onclick="showLogin()">Login Here</button>
+            </div>
+            `
+        root.innerHTML=str;
+        }
+        function showWel(){
+            let email= document.getElementById("email").value
+            let password= document.getElementById("password").value
+            for(let i=0;i<users.length;i++){
+                if(users[i].email==email && users[i].password==password){
+                    useremail=email
+                    username=users[i].name
+                    currBalance=users[i].balance
+                    home();
+                    break;
+                }
+                else{
+                    msg.innerHTML="Access Denied.."
+                }
+            }
+            
+        }
+        function addUser(){
+            let name= document.getElementById("name").value
+            let email= document.getElementById("email").value
+            let password= document.getElementById("password").value
+            let dob= document.getElementById("dob").value
+            let user={
+                name:name,
+                email:email,
+                password:password,
+                dob:dob,
+                balance:0
+            }
+            users.push(user)
+            console.log(users);
+            showLogin();
         }
     </script>
 </head>
 <body onload="showLogin()">
+    <h1>HDFC Bank</h1>
+    <hr>
     <div id="root"></div>
+    <hr>
+    <h3>@copyrights 2005. All rights are reserved</h3>
 </body>
 </html>
