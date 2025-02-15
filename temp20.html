@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const Products=[
+        {id:1,name:"p1",price:34},
+        {id:2,name:"p2",price:50},
+        {id:3,name:"p3",price:40},
+        ];
+        const cart={}
+        //const obj={"John":1, "mango":2,"banana":3}
+        const addToCart=(id)=>{
+            cart[id]=1
+            showCart();
+            
+            //console.log(cart);
+
+            //test["john"]=45
+            //test["catty"]=50
+            //test["catt"]=50
+          //  if(obj["mango"]){
+            //    obj["mango"]+=1;
+            //}
+            //else{
+              //  console.log("Does Not Exist")
+            //}
+            //divCart.innerHTML= obj["mango"]
+            //console.log(obj);
+            
+        }
+        const showProducts=()=>{
+            let str=""
+            //map also used instead of forEach
+            Products.forEach((value)=>{
+                str+=`<div>${value.id}, ${value.name}, ${value.price}
+                    <button onclick='addToCart(${value.id})'>Add to Cart</button>
+                </div>`
+            });
+            divProducts.innerHTML=str
+        };
+    </script>
+</head>
+<body onload="showProducts()">
+    <h1>My Store</h1>
+    <hr>
+    <h2>Products</h2>
+    <div id="divProducts"></div>
+    <h2>My Cart</h2>
+    <div id="divCart"></div>
+</body>
+</html>

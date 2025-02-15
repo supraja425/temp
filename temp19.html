@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let products=["apple","mango","orange"]
+        // products.forEach((value,index,arr) => {  //if only one argument then its value, if both frst is value and second is index.
+        //     console.log(value,index,arr);       // if we take another argument as arr then array also gets printed
+        // });
+
+
+        // let products=["apple","mango","orange"]
+        // products.forEach((value,index) => { 
+        //     console.log(value); 
+        // });
+
+
+        // let score=[32,12,42,35]
+        // let newScore=score.map((value,index) => { 
+        //     // value += 5;
+        //     // newScore.push(value);
+        //     return value+5
+        // });
+        // console.log(newScore);
+
+
+        // let score=[32,12,42,35]
+        // let newScore=score.filter((value,index) => { 
+        //     // value += 5;
+        //     // newScore.push(value);
+        //     return value>15 
+        // });
+        // console.log(newScore);
+
+
+        let empid=[32,12,42,35]
+        let newScore=empid.find((value,index) => { //it will give the value that is greater than 15(on;y one that is frst value)
+            // value += 5;
+            // newScore.push(value);
+            return value>15 
+        });
+        console.log(newScore);
+    </script>
+</body>
+</html>

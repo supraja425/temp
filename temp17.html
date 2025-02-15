@@ -4,8 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function changeColor(){
+            let col=document.getElementById("color").value;
+            //let size=document.getElementById("h1").value;
+            //let txt=document.getElementById("txt")
+            let bcolor=document.getElementById("bcolor").value;
+            document.getElementById('txt').style.color = col;
+            document.getElementById('txt').style.backgroundColor = bcolor;
+            //txt.style.fontSize=size;
+        }
+    </script>
 </head>
 <body>
-    
+    <input type="text" id="color" placeholder="enter color">
+    <p><select id="bcolor">
+        
+        <option value=red>red</option>
+        <option value=green>green</option>
+        <option value=blue>blue</option>
+    </select></p>
+    <!-- <input type="text" id="h1" placeholder="enter size"> -->
+    <button onclick="changeColor()">Submit</button>
+    <div id="divColor">
+    <h1 id="txt">Hello World!!!</h1>
+</div>
 </body>
 </html>
