@@ -10,8 +10,8 @@
         }
         .container{
             background-color: white;
-            border-radius: 20px;
-            padding: 10px;
+            border-radius: 10px;
+            padding: 20px;
             width: 400px;
             margin: auto;
         }
@@ -23,10 +23,11 @@
             font-size: 30px;
         }
         .header{
-            font-size: 60px;
-            color: blue;
+            font-size: 50px;
+            color: rgb(8, 102, 255);;
             font-family: Verdana;
             font-weight: bold;
+            padding: 30px;
         }
         .caption{
             font-size: 20px;
@@ -35,7 +36,7 @@
         }
         input,select{
             width: 100%;
-            margin: 5px;
+            margin: 8px;
             border-radius: 3px;
             padding: 5px;
             border: 1px solid grey;
@@ -80,10 +81,10 @@
     
 </head>
     <body>
+        <div class="row">
+            <div class="header">facebook</div>
+        </div>
         <div class="container">
-            <div class="row">
-                <div class="header">facebook</div>
-            </div>
             <div class="row">
                 <div>
                 <div class="title">
@@ -117,43 +118,75 @@
             <div class="row">
                 <div class="radioClass">
                     <div><label> Female</label></div>
-                    <div><input type="radio" name="gender" /></div>
+                    <div><input type="radio" name="gender" onclick="togglePronoun()"></div>
                   </div>
                   <div class="radioClass">
                       <div><label> Male</label></div>
-                          <div><input type="radio" name="gender" /></div>
+                          <div><input type="radio" name="gender" onclick="togglePronoun()"></div>
                   </div>
                   <div class="radioClass">
                       <div><label> Custom</label></div>
-                      <div><input type="radio" name="gender" /></div>
+                      <div><input type="radio" name="gender" onclick="togglePronoun()"></div>
                   </div>
+            </div>
+            <div class="row">
+                <select id="prSelect" style="display: none;">
+                    <option value="">Select your pronoun</option>
+                    <option value="">She:"wish her a Happy Birthday"</option>
+                    <option value="">He:"wish him a Happy Birthday"</option>
+                    <option value="">They:"wish them a Happy Birthday"</option>
+                </select>
             </div>
             <div class="row">
                 <input type="text" placeholder="enter email or mobile number">
             </div>
             <div class="row">
                 <input type="password" placeholder="enter password">
-            </div>
-            <div class="row"><button>Sign Up</button></div>
+            </div> 
+            <div class="row"><button  onclick='showData()'>Sign Up</button></div>
             <div class="row"><p>Already have an account?</p></div>
         </div>
         <script>
+            const showData = () => {
+                let firstname = document.getElementById("firstname").value;
+                let surname = document.getElementById("surname").value;
+                let str = `
+                <div>
+                  Name:${firstname} ${surname}
+                </div>
+                `;
+                root.innerHTML = str;
+              };
             let str="";
             
             for(let i=1;i<=31;i++){
                 str+=`<option>${i}</option>`
             }
             day.innerHTML=str;
-            let str1=""
+            let str1=[jan,feb,mar,apr]
+            for(let i=0;i<str1.length;i++){
+                str1+=`<option>${str1[i]}</option>`
+            }
+            month.innerHTML=str1;
+            /*let str1=""
             for(let i=1;i<=12;i++){
                 str1+=`<option>${i}</option>`
             }
-            month.innerHTML=str1
+            month.innerHTML=str1*/
             let str2="";
-            for(let i=1905;i<=2025;i++){
+            for(let i=2025;i>=1905;i--){
                 str2+=`<option>${i}</option>`
             }
             year.innerHTML=str2;
+            const togglePronoun=()=>{
+                let p=document.getElementsByName("gender");
+                if(p[2].checked){
+                    prSelect.style.display='block';
+                }
+                else{
+                    prSelect.style.display='none';
+                }
+            }
         </script>
     </body>
 
