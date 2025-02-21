@@ -75,6 +75,15 @@
         border-radius: 5px;
         padding: 3px;
       }
+      .checkBox{
+        border: 1px solid gray;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 3px;
+      }
     </style>
   </head>
   <body>
@@ -217,7 +226,27 @@
           } name="gender" onclick="togglePronoun()" /></div>
         </div>
       </div>
-
+      <div class="row" style="justify-content: start">
+        <div class="leftCaption">
+          Intrest<span class="qMark"
+            ><abbr title="Click for more information">?</abbr></span
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="checkBox">
+            <div><label>Music</label></div>
+            <div><input type="checkbox"></div>
+        </div>
+        <div class="checkBox">
+            <div><label>Movies</label></div>
+            <div><input type="checkbox"></div>
+        </div>
+        <div class="checkBox">
+            <div><label>Painting</label></div>
+            <div><input type="checkbox"></div>
+        </div>
+      </div>
      <div class="row">
       <select id="prSelect" style="display:none">
         <option value="NA" >Select your pronoun</option>
@@ -232,7 +261,7 @@
       </div>
       <div class="row">
         <input type="password" value='${password}' id="password" placeholder="New password" />
-        <img src="assets/images/eye-hide.png" id='toggleEye' onclick='togglePwd()' width="40px">
+        <img src="h-eye.jpg" id='toggleEye' onclick='togglePwd()' width="40px">
       </div>
       <div class="row">
         <button onclick='showData()'>Sign Up</button>
