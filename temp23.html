@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="assets/images/ball.png" width="100px" id="ball">
+    <img src="assets/images/basket.jpg" width="200px" id="basket"/>
+    <script>
+        ball.style.position="absolute"
+        basket.style.position="absolute"
+        let b=document.body;
+        let lft=0;
+        let dwn=600;
+        let score=0;
+        b.onkeydown = (e) =>{
+            if(e.key=="ArrowRight") lft+=5;
+            if(e.key=="ArrowDown") dwn+=5;
+            if(e.key=="ArrowLeft") lft-=5;
+            //if(e.key=="a") lft-=5;
+            if(e.key=="ArrowUp") dwn-=5;
+            basket.style.left=lft+"px";
+            basket.style.top=dwn+"px";
+        };
+        let t=0
+        let l=0;
+        function ballFall(){
+            t++
+            if(t>600) {
+                t=1;
+                l=Math.random() * 500;
+            }
+            ball.style.top=t+"px";
+            ball.style.left=l+"px";
+            setTimeout(ballFall, 5);
+        }
+        ballFall();
+    </script>
+</body>
+</html>
